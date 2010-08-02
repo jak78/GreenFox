@@ -53,11 +53,7 @@ var greenfoxController = {
 			if( ! samplerOK ) {
 				this.setState("sampler_ko");
 			} else {
-				if( this.isConfigured() ) {
-					this.setState('ready');
-				} else {
-					this.setState('not_configured');
-				}
+				this.setState('ready');
 			}
 		} catch( e ) {
 			handleError(e);
@@ -75,7 +71,7 @@ var greenfoxController = {
 	
 	prefs: null,
 	
-	/*
+	/**
 	 * Called when prefs are changed.
 	 */
 	observe: function(subject, topic, data) {
@@ -83,21 +79,6 @@ var greenfoxController = {
 			this.destroy();
 			this.init();
 		}
-	},
-	/**
-	 * @return true if GreenFox has been configured by the challenger, false otherwise.
-	 */
-	isConfigured: function() {
-		return this.isPrefConfigured("challengerID")
-	},
-	isPrefConfigured: function(prefName) {
-		var defaults = Components.classes["@mozilla.org/preferences-service;1"]
-				.getService(Components.interfaces.nsIPrefService).getDefaultBranch("extensions.greenfox.");
-		var prefs = Components.classes["@mozilla.org/preferences-service;1"]
-					.getService(Components.interfaces.nsIPrefService).getBranch("extensions.greenfox.");
-		var d = defaults.getCharPref(prefName)
-		var p = prefs.getCharPref(prefName)
-		return d != p;
 	},
 
 	/////////////////////////////////////

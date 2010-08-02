@@ -6,36 +6,15 @@
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	title="GreenFox settings" 
-	width="620" height="270"
+	width="620" height="140"
 	ondialogaccept="return greenfoxPrefsMgr.dialogSave();" onload="greenfoxPrefsMgr.dialogInit();"
 	orient="vertical">
 	<script type="application/x-javascript" src="greenfox_prefs.js" />
-	<tabbox>
-		<tabs>
-			<tab label="Settings"/>
-			<tab label="Advanced"/>
-		</tabs>
-		<tabpanels>
-			<tabpanel orient="vertical">
-				<groupbox>
-					<caption label="Your challenger ID"/>
-					<textbox id="greenfox-challengerID" />
-					<description>Use your email address to identify you as a challenger.</description>
-				</groupbox>
-				<groupbox>
-					<caption label="Scoring"/>
-					<checkbox id="greenfox-collection-enabled" label="Send samples to Green Challenge scoring server"/>
-				</groupbox>
-			</tabpanel>
-			<tabpanel orient="vertical">
-				<groupbox>
-					<caption label="Collection API URL"/>
-					<textbox id="greenfox-endpoint" />
-					<description>Only change this if you are coding GreenFox, or if the collect server URL changed.</description>
-				</groupbox>
-			</tabpanel>
-		</tabpanels>
-	</tabbox>
+	
+	<groupbox>
+		<caption label="Scoring"/>
+		<checkbox id="greenfox-collection-enabled" label="Log samples"/>
+	</groupbox>
 
 	<spacer flex="1"/>
 	

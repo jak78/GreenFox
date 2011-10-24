@@ -1,4 +1,5 @@
 #!/bin/bash
+# test
 
 rm -fr build/*
 mkdir -p build
